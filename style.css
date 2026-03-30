@@ -242,6 +242,25 @@ p { text-wrap: pretty; max-width: 72ch; }
   font-style: italic;
 }
 
+/* --- Family Photo --- */
+.photo-section {
+  padding-top: 0;
+  padding-bottom: clamp(var(--space-8), 6vw, var(--space-16));
+}
+
+.photo-wrapper {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.family-photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-divider);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
 /* --- Sections --- */
 .section {
   padding: clamp(var(--space-12), 8vw, var(--space-24)) var(--space-6);
@@ -326,6 +345,56 @@ p { text-wrap: pretty; max-width: 72ch; }
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   line-height: 1.7;
+}
+
+/* Clickable business cards */
+a.business-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive),
+              transform var(--transition-interactive);
+}
+
+a.business-card-link:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+a.business-card-link h3,
+a.business-card-link p {
+  color: inherit;
+}
+
+a.business-card-link h3 {
+  color: var(--color-text);
+}
+
+a.business-card-link p {
+  color: var(--color-text-muted);
+}
+
+.card-url {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-interactive);
+}
+
+a.business-card-link:hover .card-url {
+  border-bottom-color: var(--color-primary);
+}
+
+.card-url.coming-soon {
+  color: var(--color-text-faint);
+  font-style: italic;
 }
 
 /* --- Contact --- */
